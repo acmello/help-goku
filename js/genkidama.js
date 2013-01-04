@@ -52,13 +52,13 @@
 		},
 
 		draw : function(img) {
-			ctx.drawImage(img, 480, 340)
+			ctx.drawImage(img, 480, canvas.height - 388)
 		},
 	}
 
 	function Sphere(){
 		this.x = 605;
-		this.y = 420;
+		this.y = (canvas.height - 300);
 		this.radius = 20;
 	}
 
