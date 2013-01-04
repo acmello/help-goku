@@ -103,5 +103,12 @@
 		img.draw(img.load());
 		genkidama.draw();
 	}, 1000 / 60);
+
+
+	window.onresize = function(event) {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      scenario.clear();
+    }	
 	
 })();
