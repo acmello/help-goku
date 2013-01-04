@@ -59,10 +59,14 @@
 	function Sphere(){
 		this.x = 605;
 		this.y = (canvas.height - 300);
-		this.radius = 20;
+		this.radius = 15;
 	}
 
 	Sphere.prototype.update = function(){
+		if( this.radius > 40 || this.radius > 60 
+			|| this.radius > 80 )
+			this.y -= 10;
+
 		this.radius += 1;
 	}
 

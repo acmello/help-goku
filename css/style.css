@@ -2,8 +2,110 @@ html, body {
 	margin: 0;
 	width: 100%; height: 100%;
 	overflow: hidden;
+	font-family: Helvetica, Arial, "Lucida Grande";
+	font-size: 15px;
+	color: #FFFFFF;
+	
 }
 
 canvas {
+	position: absolute;
+	-webkit-user-select: none;
 	background-color: rgb(142, 193, 218);
+}
+
+#info-tab {
+	-webkit-border-radius:10px;
+	  -moz-border-radius:10px;
+	    -o-border-radius:10px;
+			border-radius:10px;
+	
+	border: 1px white solid;
+	background-color: #262626;
+	height: 165px;
+	position: fixed;
+	padding-left: 5px;
+	width: 630px;
+	margin-top: 11px;
+	left: -598px;
+	z-index: 1000;
+	top: 40px;
+}
+
+.content {
+	position: relative;
+}
+
+#info-tab #title {
+	position: relative;
+	width: 80px;
+	top: 57px;
+	left: 20px;
+	float: right;
+	-webkit-transform: rotate( 90deg );
+	  -moz-transform: rotate( 90deg );  
+	    -ms-transform: rotate( 90deg ); 
+	      -o-transform: rotate( 90deg ); 
+			transform: rotate( 90deg );
+}
+
+#info-tab:hover{
+	width: 970px;
+	-webkit-transition: width 220msr;
+    -moz-transition: width 220ms; 
+    -o-transition: width 220ms;
+    -ms-trantion: width 220ms;
+    transition: width 220ms; 	
+}
+
+#info-tab:hover #title {
+	width: 80px;
+	top: 65px;
+	left: 20px;
+	-webkit-transition: left 220ms linear;
+    -moz-transition: left 220ms linear; 
+    -o-transition: left 220ms linear;
+    -ms-trantion: left 220ms linear;
+    transition: left 220ms linear;
+}
+
+#info-tab #description {
+	display: block;
+	margin-right: 30px;	
+}
+
+
+#info-tab:hover #description {
+	margin: 5px 100px 5px 5px;
+	width: 300px;
+	position: relative;
+	float: left;
+	left: 600px;
+	-webkit-transition: left 220ms;
+    -moz-transition: left 220ms; 
+    -o-transition: left 220ms;
+    -ms-trantion: left 220ms;
+    transition: left 220ms;
+}
+
+#info-tab:hover #fb-button {
+	position: relative;
+	left: 200px;
+	top: 135px;
+}
+
+#info-tab:hover #twitter-button {
+	position: relative;
+	left: 300px;
+	top: 115px;
+}
+
+a {
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #FFFFFF;
+	text-decoration: underline;
 }
