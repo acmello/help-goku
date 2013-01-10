@@ -90,17 +90,15 @@ canvas {
 }
 
 #info-tab:hover #fb-button {
-	margin: 0;
-	padding: 0;
-	position: relative;
-	left: 200px;
-	top: 138px;
+	position: absolute;
+	left: 600px;
+	top: 135px;
 }
 
 #info-tab:hover #twitter-button {
-	position: relative;
-	left: 300px;
-	top: 118px;
+	position: absolute;
+	left: 700px;
+	top: 135px;
 }
 
 a {
