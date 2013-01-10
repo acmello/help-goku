@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Goku - Genkidama</title>
+	<title>Help Goku</title>
+	
+	<!-- CSS -->	
 	<link rel="stylesheet" href="css/style.css">
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="css/img/favicon.ico">
+	
 </head>
 <body>
 	
@@ -13,8 +19,9 @@
 			<div id="title">Help Goku</div>
 			<div id="description">
 				<p>What about helping Goku to get rid of another big boss?
-				As you hit the button, the Genki Dama gets stronger and stronger.
-				Up to you. Help to save the earth.
+				Use the controls to watch the Genki-Dama getting stronger
+				and stronger. Huge thanks to Natalia for supporting this AMAZING
+				and useless project!
 				</p>
 			</div>
 			
@@ -35,6 +42,8 @@
 		Sorry! Your browser is not able to help! :(
 	</canvas>
 	
+	<audio src="audio/dbz-theme.ogg" loop="loop"></audio>
+	
 	<!-- tweet button stuff -->
 	<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	
@@ -49,6 +58,7 @@
 	}(document, 'script', 'facebook-jssdk'));</script>
 	
 	<!-- loading necessary scripts -->
+	<script type="text/javascript" src="js/dat.gui.min.js"></script>
 	<script type="text/javascript" src="js/genkidama.js"></script>
 </body>
 </html>

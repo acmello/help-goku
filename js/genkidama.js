@@ -6,7 +6,14 @@
 	canvas.height = window.innerHeight;
 
 	var howManyCircles = 10, circles = [];
+	
+	var onresizeX
+		, onresizeY;
 
+	var audio = document.querySelector('audio');
+	audio.volume = 1;
+	audio.play();
+	
 	var scenario = {
 		populateCircles : function(){
 			for ( var i = 0; i < howManyCircles; i++ )  {
@@ -52,39 +59,41 @@
 		},
 
 		draw : function(img) {
-			ctx.drawImage(img, 480, canvas.height - 388)
+			var w = ( canvas.width / 2 ) - ( img.width / 2 )
+				, h = canvas.height - 385;
+			ctx.drawImage(img, w, h)
 		},
 	}
 
 	function Sphere(){
-		this.x = 605;
-		this.y = (canvas.height - 300);
-		this.radius = 15;
+		this.x = canvas.width / 2;
+		this.y = canvas.height - 400;
+		//this.y = 200;
+		this.radius = 80;
 	}
 
 	Sphere.prototype.update = function(){
-		if( this.radius > 40 || this.radius > 60 
-			|| this.radius > 80 )
-			this.y -= 10;
-
-		this.radius += 1;
+			this.radius += .1;
 	}
 
 	Sphere.prototype.draw = function(){
-		var r = Math.round(Math.random()*255)
-			, g = Math.round(Math.random()*255)
-			, b = Math.round(Math.random()*255);
+		var r = Math.round(Math.random() * 255)
+			, g = Math.round(Math.random() * 255)
+			, b = Math.round(Math.random() * 255);
+			
+		var x = onresizeX || this.x
+			, y = onresizeY || this.y;	
 
 		ctx.globalCompositeOperation = "lighter";
-		var gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+		var gradient = ctx.createRadialGradient(x, y, 0, x, y, this.radius);
 		gradient.addColorStop(0, 'rgba('+r+','+g+','+b+',.1)');
 		gradient.addColorStop(0.5, 'rgba('+r+','+g+','+b+',.9)');
-		gradient.addColorStop(1, 'rgba('+r+','+g+','+b+',.1)');
+		gradient.addColorStop(1, 'rgba('+r+','+g+','+b+',.2)');
 
 		ctx.fillStyle = gradient;
 
 		ctx.beginPath();
-		ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true);
+		ctx.arc(x, y, this.radius, 0, Math.PI*2, true);
 		ctx.closePath();
 		ctx.fill();
 	}
@@ -92,23 +101,30 @@
 	// Goku's strongest power :)
 	var genkidama = new Sphere();
 	
-	// fullfill the array with circles displayed
-	// on the background
-	scenario.populateCircles();
+	// shouldnt be here
+	var gui = new dat.GUI();
+	gui.add(genkidama, 'radius', 15, 135);
+	
+	// fill the array with circles 
+	// displayed on the background
+	scenario.populateCircles(); 
 	
 	setInterval(function(){
 		scenario.clear();
 		scenario.moveCircles(5);
 		scenario.drawCircles();
 		img.draw(img.load());
+		//genkidama.update();
 		genkidama.draw();
 	}, 1000 / 60);
-
 
 	window.onresize = function(event) {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
-      scenario.clear();
+      
+	  onresizeX = canvas.width / 2;
+	  onresizeY = canvas.height - 400;
+	  
+	  scenario.clear();
     }	
-	
 })();

@@ -5,6 +5,8 @@ html, body {
 	font-family: Helvetica, Arial, "Lucida Grande";
 	font-size: 15px;
 	color: #FFFFFF;
+	line-height: 1.2em;
+	text-align: justify;
 }
 
 canvas {
@@ -70,7 +72,7 @@ canvas {
 
 #info-tab #description {
 	display: block;
-	margin-right: 30px;	
+	margin-right: 40px;	
 }
 
 
@@ -90,13 +92,13 @@ canvas {
 #info-tab:hover #fb-button {
 	position: relative;
 	left: 200px;
-	top: 135px;
+	top: 145px;
 }
 
 #info-tab:hover #twitter-button {
 	position: relative;
 	left: 300px;
-	top: 115px;
+	top: 125px;
 }
 
 a {
