@@ -92,13 +92,13 @@ canvas {
 #info-tab:hover #fb-button {
 	position: relative;
 	left: 200px;
-	top: 140px;
+	top: 138px;
 }
 
 #info-tab:hover #twitter-button {
 	position: relative;
 	left: 300px;
-	top: 120px;
+	top: 118px;
 }
 
 a {
